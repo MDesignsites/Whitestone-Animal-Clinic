@@ -1,0 +1,54 @@
+.about-us {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 800;
+  margin: 4rem 0;
+  
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #1759A6;
+      font-weight: 900;
+      font-size: 3rem;
+    }
+  
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 4rem;
+      background-color: #6894c5;
+      position: relative;
+      overflow: visible;
+  
+      .about-info {
+        text-align: justify;
+        margin-inline: 5rem;
+        color: white; 
+  
+        .links {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+        }
+      }
+  
+      .about-hero {
+        position: relative;
+        text-align: center;
+  
+        img {
+          width: 60%; // Slightly larger than the container
+          max-width: 650px;
+          border-radius: 10px;
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+          position: absolute;
+          right: 50px; // Push it outside the container
+          top: 50%;
+          transform: translateY(-50%); // Center vertically
+          z-index: 2;
+        }
+      }
+    }
+  }
+  

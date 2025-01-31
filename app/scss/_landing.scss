@@ -1,0 +1,28 @@
+.landing {
+    background: rgb(25,93,168);
+    background: linear-gradient(180deg, rgba(25,93,168,1) 0%, rgba(255,255,255,0) 100%);
+
+    .landing-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .landing-text {
+            font-family: "Noto Sans", sans-serif;
+            font-size: 2.25rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
+            text-align: left;
+            align-content: center;
+            color: white;
+            margin-left: 6rem;
+        }
+
+        .landing-hero {
+            margin-inline: 3rem;
+            img {
+                width: 100%;
+                align-content: center;
+            }
+        }
+    }
+}

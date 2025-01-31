@@ -1,0 +1,17 @@
+.services {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #1759A6;
+        font-weight: 900;
+        font-size: 3rem;
+    }
+    .services-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
