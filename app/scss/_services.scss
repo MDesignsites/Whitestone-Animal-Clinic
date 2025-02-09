@@ -1,6 +1,7 @@
 .services {
     font-family: "Noto Sans", sans-serif;
     font-weight: bold;
+    margin: 4rem 5rem;
 
     h1 {
         text-align: center;
@@ -13,5 +14,31 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
 
+        .services-hero {
+            text-align: center;
+            img {
+                width: 80%;
+            }
+        }
     }
+}
+
+@media (max-width: 576px) {
+    .services {
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .services-content {
+            display: flex;
+            flex-direction: column;
+
+            .services-hero {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
 }

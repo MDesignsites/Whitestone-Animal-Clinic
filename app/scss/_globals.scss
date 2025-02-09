@@ -4,34 +4,89 @@ body {
 }
 
 header {
-    ul {
-        margin: 0;
-        padding: 2rem;
-        background-color: #1B5DA9;
+    background-color: #1B5DA9;
+    padding: 0.5rem 1rem;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: 0.3s;
+        }
+    }
+
+    .logo img {
+        width: 10rem;
+        height: auto;
+    }
+
+    .nav-links {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-    
-        :nth-child(2) {
-            margin-left: auto;
+        list-style: none;
+        gap: 2rem;
+
+        li a {
+            font-family: "Martel", serif;
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            white-space: nowrap;
         }
-    
-        li {
-            list-style-type: none;
-    
-            a {
-                font-family: "Martel", serif;
-                text-decoration: none;
-                color: white;
-                font-size: 1.25rem;
-                white-space: nowrap;
-    
-                img {
-                    width: 20%;
-                }
+    }
+
+    @media (max-width: 576px) {
+        nav {
+            flex-wrap: wrap;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .logo {
+            order: 2;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: fixed; // Ensure it covers the screen
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; // Full height
+            background-color: #1B5DA9;
+            padding: 2rem 0;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            z-index: 999; // Ensure it's above other elements
+
+            li {
+                text-align: center;
             }
+
+            li a {
+                font-size: 1.5rem;
+            }
+        }
+
+        .nav-links.active {
+            display: flex; // Show when toggled
         }
     }
 }
@@ -74,5 +129,43 @@ footer {
                 width: 25%;
             }
         }
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+
+        .address {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .socials {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 1rem; /* Add spacing between the icons */
+
+            :first-child {
+                margin-left: 0px;
+            }
+
+            :last-child {
+                margin-left: 0px !important;
+            }
+        
+            a {
+                /* Styles for the social media links */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            .mdl {
+                display: flex;
+                justify-content: center;
+            }
+        }        
     }
 }

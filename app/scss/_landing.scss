@@ -26,3 +26,33 @@
         }
     }
 }
+
+@media (min-width: 577px) and (max-width: 1024px) {
+    .landing-text {
+        font-size: 1.25rem !important;
+        margin-left: 2rem !important;
+    }
+
+    .landing-hero {
+        margin-inline: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .landing-content {
+        padding-top: 5rem;
+    }
+
+    .landing-text {
+        font-size: 0.75rem !important;
+        margin-left: 1rem !important;
+    }
+
+    .landing-hero {
+        margin-inline: 1rem !important;
+        img {
+            align-content: center;
+            width: 100%;
+        }
+    }
+}
