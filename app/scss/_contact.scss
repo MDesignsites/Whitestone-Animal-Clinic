@@ -13,7 +13,7 @@
     .contact-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 6rem;
 
         .content-details {
             display: flex;
@@ -82,7 +82,7 @@
                 border: 1px solid black;
                 border-radius: 2rem;
                 padding: 1.5rem;
-                margin-inline: 8rem;
+                width: 100%;
 
                 input,
                 textarea {
@@ -113,7 +113,7 @@
     .contact {
         margin: 4rem 0rem !important;
         h1 {
-            font-size: 2rem !important;
+            font-size: 3rem !important;
         }
 
         h2, p {
@@ -126,6 +126,12 @@
             justify-content: center;
             align-items: center;
 
+            .contact-form {
+                width: 75% !important;
+                display: flex;
+                align-content: center;
+            }
+
             .content-details {
                 .content-card {
                     width: 20rem;
@@ -134,9 +140,27 @@
                         flex-direction: column;
                     }
                 }
+            }
+        }
+    }
+}
 
-                form {
-                    margin-inline: 0rem !important;
+@media (max-width: 320px) {
+    .contact-content {
+        .content-details {
+            .content-card {
+                display: inline-block;
+                margin-inline: auto;
+                width: 75% !important;
+
+                a {
+                    display: inline-block;
+                    margin-inline: auto;
+                    width: 75% !important;
+                    
+                    p {
+                        font-size: 0.8rem !important;
+                    }
                 }
             }
         }

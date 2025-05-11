@@ -12,31 +12,33 @@
     .product-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
         margin-bottom: 3rem;
 
         .product-card {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            width: 13rem;
-            padding: 2rem;
-            border: 1px solid grey;
+            outline: 1px solid black;
             border-radius: 1rem;
+            padding: 2rem;
             
             .product-img {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+
                 img {
+                    margin-inline: auto;
+                    width: 50%;
                     background-color: grey;
                     padding: 1rem;
-                    width: 85%;
                 }
-            }
-    
-            .product-desc {
-                display: flex;
-                flex-direction: row;
-    
-                :nth-child(2) {
-                    margin-left: auto;
+                
+                .description {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
             }
         }
@@ -65,15 +67,50 @@
 
         .product-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
+
+            .product-card {
+                justify-content: center;
+                
+                .product-img {
+                    img {
+                    width: 50%;
+                }
+                }
+            }
         }
     }
 }
 
 @media (max-width: 576px) {
     .product {
-        margin: 4rem 4rem !important;
+        margin: 0rem !important;
+        h1 {
+            font-size: 3rem !important;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .product-card {
+                margin-inline: auto;
+                width: 75%;
+
+                .product-img {
+                    img {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .product {
+        margin: 0rem 1.5rem !important;
         h1 {
             font-size: 2rem !important;
         }

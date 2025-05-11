@@ -22,13 +22,27 @@
 @media (max-width: 576px) {
     .partner {
         h1 {
-            font-size: 2rem !important;
+            font-size: 3rem !important;
         }
 
         .icons {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .partner {
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
         }
     }
 }

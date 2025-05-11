@@ -18,15 +18,18 @@
         .services-card {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            gap: 1rem;
-            width: 13rem;
-            padding: 2rem;
-            border: 1px solid grey;
+            justify-content: start;
+            outline: solid 1px black;
             border-radius: 1rem;
-            align-self: stretch;
+            outline-offset: 1rem;
+            align-items: stretch;
+            height: 100%;
+            width: 100%;
 
             .services-text {
+                h2 {
+                    text-align: center;
+                }
                 ul {
                     display: flex;
                     flex-direction: column;
@@ -40,9 +43,9 @@
 
 @media (max-width: 576px) {
     .services {
-        margin: 4rem 4rem !important;
+        margin: 0rem 5rem !important;
         h1 {
-            font-size: 2rem !important;
+            font-size:  3rem !important;
         }
 
         .services-content {
@@ -50,8 +53,32 @@
             flex-direction: column;
 
             .services-card {
-                padding: 1.5rem !important;
+                .services-text {
+                    h2 {
+                        font-size: 2rem;
+                    }
+                }
             }
+
+            .services-hero {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .services {
+        margin: 0rem 1.5rem !important;
+        h1 {
+            font-size: 2rem !important;
+        }
+
+        .services-content {
+            display: flex;
+            flex-direction: column;
 
             .services-hero {
                 img {

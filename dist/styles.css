@@ -117,6 +117,19 @@ footer .socials .mdl img {
   footer .address {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  footer .address .address-info {
+    text-align: center;
+    font-size: 1rem;
+  }
+  footer .address .address-info h2 {
+    font-size: 1.25rem;
+  }
+  footer .address .info {
+    text-align: center;
+    justify-content: center;
   }
   footer .socials {
     display: flex;
@@ -245,7 +258,7 @@ footer .socials .mdl img {
     margin-top: 10rem;
   }
   .about-us h1 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
   .about-us .about-content {
     display: flex; /* Change grid to flex */
@@ -296,13 +309,16 @@ footer .socials .mdl img {
 .services .services-content .services-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 13rem;
-  padding: 2rem;
-  border: 1px solid grey;
+  justify-content: start;
+  outline: solid 1px black;
   border-radius: 1rem;
-  align-self: stretch;
+  outline-offset: 1rem;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+}
+.services .services-content .services-card .services-text h2 {
+  text-align: center;
 }
 .services .services-content .services-card .services-text ul {
   display: flex;
@@ -313,7 +329,25 @@ footer .socials .mdl img {
 
 @media (max-width: 576px) {
   .services {
-    margin: 4rem 4rem !important;
+    margin: 0rem 5rem !important;
+  }
+  .services h1 {
+    font-size: 3rem !important;
+  }
+  .services .services-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .services .services-content .services-card .services-text h2 {
+    font-size: 2rem;
+  }
+  .services .services-content .services-hero img {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .services {
+    margin: 0rem 1.5rem !important;
   }
   .services h1 {
     font-size: 2rem !important;
@@ -322,11 +356,111 @@ footer .socials .mdl img {
     display: flex;
     flex-direction: column;
   }
-  .services .services-content .services-card {
-    padding: 1.5rem !important;
-  }
   .services .services-content .services-hero img {
     width: 100%;
+  }
+}
+.faqs {
+  font-family: "Noto Sans", sans-serif;
+  margin: 4rem 5rem;
+}
+.faqs h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1759A6;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.faqs .faq-card {
+  border-radius: 1rem;
+  margin-inline: 4rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faqs .faq-card .faq-collapse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2961a1;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: border-radius 0.3s ease;
+}
+.faqs .faq-card .faq-collapse h3 {
+  color: white;
+  font-size: 1.5rem;
+}
+.faqs .faq-card .faq-collapse img {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.3s ease;
+}
+.faqs .faq-card .faq-content {
+  display: none;
+  background-color: white;
+  color: black;
+}
+.faqs .faq-card .faq-content ol {
+  padding: 1.25rem 3rem;
+  font-weight: 500;
+}
+.faqs .faq-card .faq-content ol li {
+  margin-bottom: 0.5rem;
+}
+.faqs .faq-card.active {
+  background-color: white;
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.5);
+}
+.faqs .faq-card.active .faq-collapse {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.faqs .faq-card.active .faq-content {
+  display: block;
+}
+.faqs .faq-card.active .faq-collapse img {
+  transform: rotate(180deg);
+}
+.faqs a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #1759A6;
+  color: white;
+  width: 10rem;
+  padding: 1rem;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+@media (min-width: 577px) and (max-width: 1024px) {
+  .faq-collapse {
+    padding: 0.5rem 4rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .faqs {
+    margin: 0rem 2rem !important;
+  }
+  .faqs h3 {
+    font-size: 1rem !important;
+  }
+  .faqs .faq-card {
+    margin-inline: 0rem !important;
+  }
+  .faqs .faq-card .faq-collapse {
+    padding: 0.5rem 1rem !important;
+  }
+  .faqs .faq-card .faq-collapse img {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .faqs .faq-card .faq-content ol {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 1.5rem !important;
   }
 }
 .featured {
@@ -403,7 +537,7 @@ footer .socials .mdl img {
     margin: 2rem 1rem;
   }
   .featured h1 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
   .featured .featured-card {
     margin-inline: 0rem;
@@ -447,12 +581,22 @@ footer .socials .mdl img {
 
 @media (max-width: 576px) {
   .partner h1 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
   .partner .icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+}
+@media (max-width: 320px) {
+  .partner h1 {
+    font-size: 2rem !important;
+  }
+  .partner .icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 }
 .product {
@@ -469,28 +613,32 @@ footer .socials .mdl img {
 .product .product-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 .product .product-container .product-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 13rem;
-  padding: 2rem;
-  border: 1px solid grey;
+  outline: 1px solid black;
   border-radius: 1rem;
+  padding: 2rem;
+}
+.product .product-container .product-card .product-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
 }
 .product .product-container .product-card .product-img img {
+  margin-inline: auto;
+  width: 50%;
   background-color: grey;
   padding: 1rem;
-  width: 85%;
 }
-.product .product-container .product-card .product-desc {
+.product .product-container .product-card .product-img .description {
   display: flex;
   flex-direction: row;
-}
-.product .product-container .product-card .product-desc :nth-child(2) {
-  margin-left: auto;
+  justify-content: space-between;
 }
 .product a {
   display: flex;
@@ -513,13 +661,38 @@ footer .socials .mdl img {
   }
   .product .product-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+  }
+  .product .product-container .product-card {
+    justify-content: center;
+  }
+  .product .product-container .product-card .product-img img {
+    width: 50%;
   }
 }
 @media (max-width: 576px) {
   .product {
-    margin: 4rem 4rem !important;
+    margin: 0rem !important;
+  }
+  .product h1 {
+    font-size: 3rem !important;
+  }
+  .product .product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .product .product-container .product-card {
+    margin-inline: auto;
+    width: 75%;
+  }
+  .product .product-container .product-card .product-img img {
+    width: 75%;
+  }
+}
+@media (max-width: 320px) {
+  .product {
+    margin: 0rem 1.5rem !important;
   }
   .product h1 {
     font-size: 2rem !important;
@@ -544,7 +717,7 @@ footer .socials .mdl img {
 .contact .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 6rem;
 }
 .contact .contact-content .content-details {
   display: flex;
@@ -604,7 +777,7 @@ footer .socials .mdl img {
   border: 1px solid black;
   border-radius: 2rem;
   padding: 1.5rem;
-  margin-inline: 8rem;
+  width: 100%;
 }
 .contact .contact-content .contact-form form input,
 .contact .contact-content .contact-form form textarea {
@@ -630,7 +803,7 @@ footer .socials .mdl img {
     margin: 4rem 0rem !important;
   }
   .contact h1 {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
   .contact h2, .contact p {
     text-align: center;
@@ -641,6 +814,11 @@ footer .socials .mdl img {
     justify-content: center;
     align-items: center;
   }
+  .contact .contact-content .contact-form {
+    width: 75% !important;
+    display: flex;
+    align-content: center;
+  }
   .contact .contact-content .content-details .content-card {
     width: 20rem;
   }
@@ -648,7 +826,19 @@ footer .socials .mdl img {
     display: flex;
     flex-direction: column;
   }
-  .contact .contact-content .content-details form {
-    margin-inline: 0rem !important;
+}
+@media (max-width: 320px) {
+  .contact-content .content-details .content-card {
+    display: inline-block;
+    margin-inline: auto;
+    width: 75% !important;
+  }
+  .contact-content .content-details .content-card a {
+    display: inline-block;
+    margin-inline: auto;
+    width: 75% !important;
+  }
+  .contact-content .content-details .content-card a p {
+    font-size: 0.8rem !important;
   }
 }/*# sourceMappingURL=styles.css.map */
