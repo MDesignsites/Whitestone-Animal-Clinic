@@ -326,6 +326,17 @@ footer .socials .mdl img {
   gap: 1rem;
   padding-left: 1rem;
 }
+.services a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #1759A6;
+  color: white;
+  width: 10rem;
+  padding: 1rem;
+  margin: 3rem auto 0rem auto;
+  font-weight: 700;
+}
 
 @media (max-width: 576px) {
   .services {
@@ -840,5 +851,202 @@ footer .socials .mdl img {
   }
   .contact-content .content-details .content-card a p {
     font-size: 0.8rem !important;
+  }
+}
+.service-finder {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  margin: 4rem 0;
+  padding: 0 1rem;
+}
+.service-finder h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1759A6;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.service-finder .service-finder-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.service-finder .service-finder-content .search-area {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
+}
+.service-finder .service-finder-content .search-area input[type=text] {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+.service-finder .service-finder-content .search-area input[type=text]:focus {
+  outline: none;
+  border-color: #1759A6;
+  box-shadow: 0 0 0 2px rgba(23, 89, 166, 0.2);
+}
+.service-finder .service-finder-content .search-area button {
+  padding: 0.75rem 1.5rem;
+  background-color: #1759A6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.service-finder .service-finder-content .search-area button:hover {
+  background-color: #114179;
+}
+.service-finder .service-finder-content .results-area {
+  margin-top: 2rem;
+  min-height: 100px;
+}
+.service-finder .service-finder-content .results-area .no-results {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  padding: 1rem 0;
+}
+.service-finder .service-finder-content .results-area .service-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.service-finder .service-finder-content .results-area .service-card {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-finder .service-finder-content .results-area .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.service-finder .service-finder-content .results-area .service-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #1759A6;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.service-finder .service-finder-content .results-area .service-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.service-finder .service-finder-content .results-area .service-card p.category {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+.service-finder .service-finder-content .results-area .service-card p.category strong {
+  font-weight: 600;
+}
+.service-finder .service-finder-content .results-area .service-card p:last-child {
+  margin-bottom: 0;
+}
+.service-finder .service-finder-content .services-overview {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+.service-finder .service-finder-content .services-overview h2 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.service-finder .service-finder-content .services-overview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .service-finder h1 {
+    font-size: 2.5rem;
+  }
+  .service-finder .service-finder-content {
+    padding: 1.5rem;
+  }
+  .service-finder .service-finder-content .search-area input[type=text] {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .service-finder .service-finder-content .search-area button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .service-finder {
+    margin: 2rem 0;
+    padding: 0 0.5rem;
+  }
+  .service-finder h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .service-finder .service-finder-content {
+    padding: 1rem;
+  }
+  .service-finder .service-finder-content .search-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .service-finder .service-finder-content .search-area input[type=text] {
+    margin-bottom: 0.75rem;
+  }
+  .service-finder .service-finder-content .results-area .service-results-list {
+    grid-template-columns: 1fr;
+  }
+  .service-finder .service-finder-content .results-area .service-card {
+    padding: 1rem;
+  }
+  .service-finder .service-finder-content .results-area .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-finder .service-finder-content .results-area .service-card p {
+    font-size: 0.9rem;
+  }
+  .service-finder .service-finder-content .services-overview h2 {
+    font-size: 1.5rem;
+  }
+}
+.virtual-tour {
+  margin-inline: 7rem;
+}
+.virtual-tour img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .virtual-tour {
+    margin-inline: 1rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .virtual-tour {
+    margin-inline: 0.5rem;
   }
 }/*# sourceMappingURL=styles.css.map */

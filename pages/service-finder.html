@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martel:wght@200;300;400;600;700;800;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Service Finder</title>
+    <link rel="stylesheet" href="../dist/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <a href="../index.html" class="logo">
+                <img src="../app/img/logo.png" alt="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">About Us</a></li>
+                <li><a href="../index.html">Services</a></li>
+                <li><a href="../index.html">Products</a></li>
+                <li><a href="../index.html">Partners</a></li>
+                <li><a href="../index.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>    
+    <section class="service-finder">
+        <h1>Find Our Services</h1>
+        <div class="service-finder-content">
+            <div class="search-area">
+                <input type="text" id="serviceSearchInput" placeholder="Search for a service (e.g., Consultation, Radiology)...">
+                <button id="serviceSearchButton">Search</button>
+            </div>
+
+            <div id="resultsArea" class="results-area">
+                <p class="no-results">Enter a service name above to see results.</p>
+            </div>
+
+            <div class="services-overview">
+                <h2>Services At a Glance</h2>
+                <img src="https://storage.googleapis.com/generativeai-downloads/images/uploaded:image_8d6a78.png-f44c7700-2963-429a-a926-1427dad22a15" alt="Overview of Services" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Services+Image+Not+Available';">
+            </div>
+        </div>
+    </section>
+    <section class="virtual-tour">
+        <img src="../app/img/tour.png" alt="virtual tour">
+    </section>
+        <footer>
+        <div class="address">
+            <div class="address-info">
+                <h2>Whitestone Animal Clinic</h2>
+                <h2>Ground Floor, Unit A4b, Southwoods Mall, Biñan, <br> 4024 Laguna</h2>
+                <p>+63-9999-9999</p>
+                <p>+63-9999-9999</p>
+                <p>support@whitestoneanimalclinic.com</p>
+            </div>
+            <div class="info">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius commodi architecto deserunt praesentium</p>
+            </div>
+            <div class="info">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius commodi architecto deserunt praesentium</p>
+            </div>
+            <div class="info">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius commodi architecto deserunt praesentium</p>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="#"><img src="../app/img/icons8-facebook-50.png" alt="facebook"></a>
+            <a href="#"><img src="../app/img/icons8-instagram-50.png" alt="instagram"></a>
+            <a href="#"><img src="../app/img/icons8-tiktok-50.png" alt="tiktok"></a>
+            <a href="#"><img src="../app/img/icons8-whatsapp-50.png" alt="whatsapp"></a>
+            <div class="mdl">
+                <img src="../app/img/mdl.png" alt="mdl">
+            </div>
+        </div>
+    </footer>
+    <script src="../app/js/menu.js"></script>
+    <script src="../app/js/finder.js"></script>
+</body>
+</html>

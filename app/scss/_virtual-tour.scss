@@ -1,0 +1,20 @@
+.virtual-tour {
+    margin-inline: 7rem;
+    img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .virtual-tour {
+        margin-inline: 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    .virtual-tour {
+        margin-inline: 0.5rem;
+    }
+    
+}

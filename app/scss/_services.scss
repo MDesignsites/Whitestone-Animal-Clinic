@@ -39,6 +39,17 @@
             }
         }
     }
+    a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #1759A6;
+        color: white;
+        width: 10rem;
+        padding: 1rem;
+        margin: 3rem auto 0rem auto;
+        font-weight: 700;
+    }
 }
 
 @media (max-width: 576px) {
