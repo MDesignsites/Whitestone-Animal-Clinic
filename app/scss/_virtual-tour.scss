@@ -1,7 +1,23 @@
 .virtual-tour {
-    margin-inline: 7rem;
-    img {
-        width: 100%;
+    font-family: "Noto Sans", sans-serif;
+    margin: 4rem 5rem;
+
+    .virtual-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 50%;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #1759A6;
+        font-size: 3rem;
+        font-weight: 900;
     }
 }
 

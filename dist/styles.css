@@ -42,6 +42,39 @@ header .nav-links li a {
   font-size: 1.25rem;
   white-space: nowrap;
 }
+header footer {
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+}
+header footer .address {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  gap: 1rem;
+  background-color: #1B5DA9;
+  padding: 4rem 4rem;
+}
+header footer .address .info {
+  font-weight: 200;
+}
+header footer .address a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+header footer .socials {
+  margin-top: 0.25rem;
+  background-color: #1B5DA9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
 @media (max-width: 576px) {
   header nav {
     flex-wrap: wrap;
@@ -92,25 +125,24 @@ footer .address {
 footer .address .info {
   font-weight: 200;
 }
+footer .address a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
 footer .socials {
   margin-top: 0.25rem;
   background-color: #1B5DA9;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   padding: 1rem;
   gap: 1rem;
-}
-footer .socials :first-child {
-  margin-left: 4rem;
-}
-footer .socials :last-child {
-  margin-left: auto;
-}
-footer .socials .mdl {
-  text-align: center;
-}
-footer .socials .mdl img {
-  width: 25%;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 @media (max-width: 576px) {
@@ -135,8 +167,10 @@ footer .socials .mdl img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    gap: 1rem; /* Add spacing between the icons */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+    gap: 1rem;
+    /* Add spacing between the icons */
   }
   footer .socials :first-child {
     margin-left: 0px;
@@ -386,47 +420,32 @@ footer .socials .mdl img {
   text-align: center;
   margin-bottom: 2rem;
   color: #1759A6;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 900;
 }
 .faqs .faq-card {
   border-radius: 1rem;
   margin-inline: 4rem;
   margin-bottom: 1.5rem;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.faqs .faq-card .faq-collapse {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2961a1;
-  padding: 1rem 3rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: border-radius 0.3s ease;
-}
-.faqs .faq-card .faq-collapse h3 {
-  color: white;
-  font-size: 1.5rem;
-}
-.faqs .faq-card .faq-collapse img {
-  width: 2rem;
-  height: 2rem;
-  transition: transform 0.3s ease;
 }
 .faqs .faq-card .faq-content {
-  display: none;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
   background-color: white;
   color: black;
 }
 .faqs .faq-card .faq-content ol {
   padding: 1.25rem 3rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 .faqs .faq-card .faq-content ol li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.faqs .faq-card .faq-content ul li {
+  font-weight: normal;
 }
 .faqs .faq-card.active {
   background-color: white;
@@ -497,7 +516,7 @@ footer .socials .mdl img {
   font-family: "Noto Sans", sans-serif;
   margin: 4rem 5rem;
 }
-.featured h1 {
+.featured h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #1759A6;
@@ -746,7 +765,6 @@ footer .socials .mdl img {
 }
 .contact .contact-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 6rem;
 }
 .contact .contact-content .content-details {
@@ -800,33 +818,6 @@ footer .socials .mdl img {
   transform: translateY(-5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.contact .contact-content .contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border: 1px solid black;
-  border-radius: 2rem;
-  padding: 1.5rem;
-  width: 100%;
-}
-.contact .contact-content .contact-form form input,
-.contact .contact-content .contact-form form textarea {
-  padding: 1rem;
-  border-radius: 1rem;
-  border: 0.5px solid #ddd;
-}
-.contact .contact-content .contact-form form button {
-  border-radius: 2rem;
-  padding: 1rem;
-  background-color: #1759A6;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.contact .contact-content .contact-form form button:hover {
-  background-color: #0f3d79;
-}
 
 @media (max-width: 576px) {
   .contact {
@@ -872,191 +863,24 @@ footer .socials .mdl img {
     font-size: 0.8rem !important;
   }
 }
-.service-finder {
+.virtual-tour {
   font-family: "Noto Sans", sans-serif;
-  font-weight: 400;
-  margin: 4rem 0;
-  padding: 0 1rem;
+  margin: 4rem 5rem;
 }
-.service-finder h1 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #1759A6;
-  font-weight: 900;
-  font-size: 3rem;
-}
-.service-finder .service-finder-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-.service-finder .service-finder-content .search-area {
+.virtual-tour .virtual-container {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  justify-content: center;
   align-items: center;
 }
-.service-finder .service-finder-content .search-area input[type=text] {
-  flex-grow: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
+.virtual-tour .virtual-container img {
+  width: 50%;
 }
-.service-finder .service-finder-content .search-area input[type=text]:focus {
-  outline: none;
-  border-color: #1759A6;
-  box-shadow: 0 0 0 2px rgba(23, 89, 166, 0.2);
-}
-.service-finder .service-finder-content .search-area button {
-  padding: 0.75rem 1.5rem;
-  background-color: #1759A6;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.service-finder .service-finder-content .search-area button:hover {
-  background-color: rgb(16.7936507937, 64.9841269841, 121.2063492063);
-}
-.service-finder .service-finder-content .results-area {
-  margin-top: 2rem;
-  min-height: 100px;
-}
-.service-finder .service-finder-content .results-area .no-results {
+.virtual-tour h2 {
   text-align: center;
-  color: #555;
-  font-size: 1.1rem;
-  padding: 1rem 0;
-}
-.service-finder .service-finder-content .results-area .service-results-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.service-finder .service-finder-content .results-area .service-card {
-  background-color: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.service-finder .service-finder-content .results-area .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.service-finder .service-finder-content .results-area .service-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
   color: #1759A6;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.service-finder .service-finder-content .results-area .service-card p {
-  font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-.service-finder .service-finder-content .results-area .service-card p.category {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 0.25rem;
-}
-.service-finder .service-finder-content .results-area .service-card p.category strong {
-  font-weight: 600;
-}
-.service-finder .service-finder-content .results-area .service-card p:last-child {
-  margin-bottom: 0;
-}
-.service-finder .service-finder-content .services-overview {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
-  text-align: center;
-}
-.service-finder .service-finder-content .services-overview h2 {
-  font-size: 1.75rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-.service-finder .service-finder-content .services-overview img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .service-finder h1 {
-    font-size: 2.5rem;
-  }
-  .service-finder .service-finder-content {
-    padding: 1.5rem;
-  }
-  .service-finder .service-finder-content .search-area input[type=text] {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.8rem;
-  }
-  .service-finder .service-finder-content .search-area button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-@media (max-width: 576px) {
-  .service-finder {
-    margin: 2rem 0;
-    padding: 0 0.5rem;
-  }
-  .service-finder h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .service-finder .service-finder-content {
-    padding: 1rem;
-  }
-  .service-finder .service-finder-content .search-area {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .service-finder .service-finder-content .search-area input[type=text] {
-    margin-bottom: 0.75rem;
-  }
-  .service-finder .service-finder-content .results-area .service-results-list {
-    grid-template-columns: 1fr;
-  }
-  .service-finder .service-finder-content .results-area .service-card {
-    padding: 1rem;
-  }
-  .service-finder .service-finder-content .results-area .service-card h3 {
-    font-size: 1.1rem;
-  }
-  .service-finder .service-finder-content .results-area .service-card p {
-    font-size: 0.9rem;
-  }
-  .service-finder .service-finder-content .services-overview h2 {
-    font-size: 1.5rem;
-  }
-}
-.virtual-tour {
-  margin-inline: 7rem;
-}
-.virtual-tour img {
-  width: 100%;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 768px) {
@@ -1068,4 +892,53 @@ footer .socials .mdl img {
   .virtual-tour {
     margin-inline: 0.5rem;
   }
+}
+.testimonials {
+  font-family: "Noto Sans", sans-serif;
+  margin: 4rem 5rem;
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1759A6;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.testimonials .testimonial-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.testimonials .testimonial-card .testimonial-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid black;
+  gap: 2rem;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-head {
+  margin-bottom: 1rem;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-head img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-text {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-name {
+  font-weight: 700;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-name p:first-child {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.testimonials .testimonial-card .testimonial-content .testimonial-name p:last-child {
+  font-size: 1rem;
+  font-weight: 400;
 }/*# sourceMappingURL=styles.css.map */

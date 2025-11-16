@@ -48,6 +48,44 @@ header {
         }
     }
 
+    footer {
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+
+    .address {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr 1fr;
+        gap: 1rem;
+        background-color: #1B5DA9;
+        padding: 4rem 4rem;
+
+        .info {
+            font-weight: 200;
+        }
+
+        a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .socials {
+        margin-top: 0.25rem;
+        background-color: #1B5DA9;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem;
+        gap: 1rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
+
     @media (max-width: 576px) {
         nav {
             flex-wrap: wrap;
@@ -94,7 +132,7 @@ header {
 footer {
     font-family: "Noto Sans", sans-serif;
     color: white;
-    
+
     .address {
         display: grid;
         grid-template-columns: 4fr 1fr 1fr 1fr;
@@ -105,6 +143,15 @@ footer {
         .info {
             font-weight: 200;
         }
+
+        a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
     }
 
     .socials {
@@ -112,23 +159,11 @@ footer {
         background-color: #1B5DA9;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         padding: 1rem;
         gap: 1rem;
-
-        :first-child {
-            margin-left: 4rem;
-        }
-
-        :last-child {
-            margin-left: auto;
-        }
-
-        .mdl {
-            text-align: center;
-            img {
-                width: 25%;
-            }
-        }
+        font-size: 1.25rem;
+        font-weight: 700;
     }
 }
 
@@ -155,13 +190,15 @@ footer {
                 justify-content: center;
             }
         }
-        
+
         .socials {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 1rem; /* Add spacing between the icons */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+            gap: 1rem;
+            /* Add spacing between the icons */
 
             :first-child {
                 margin-left: 0px;
@@ -170,18 +207,18 @@ footer {
             :last-child {
                 margin-left: 0px !important;
             }
-        
+
             a {
                 /* Styles for the social media links */
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
-        
+
             .mdl {
                 display: flex;
                 justify-content: center;
             }
-        }        
+        }
     }
 }

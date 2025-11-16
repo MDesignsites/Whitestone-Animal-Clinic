@@ -21,26 +21,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-// FAQs collapsible logic
-    const faqCards = document.querySelectorAll(".faq-card");
-
-    faqCards.forEach((faq) => {
-        const toggle = faq.querySelector(".faq-collapse");
-        const arrowImg =  faq.querySelector("img");
-
-        toggle.addEventListener("click", () => {
-            const isActive = faq.classList.contains("active");
-
-            faqCards.forEach(f => {
-            f.classList.remove("active");
-            const img = f.querySelector(".faq-collapse img");
-            if (img) img.src = "./app/img/icons8-arrow-down-50.png";
-        });
-        if (!isActive) {
-            faq.classList.add("active");
-            arrowImg.src = "./app/img/icons8-arrow-up-50.png";
-        }
-    });
-});
 });
