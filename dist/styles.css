@@ -165,7 +165,7 @@ footer .socials .mdl img {
 }
 .landing .landing-content .landing-text {
   font-family: "Noto Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   font-weight: 900;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   text-align: left;
@@ -340,6 +340,10 @@ footer .socials .mdl img {
   margin: 3rem auto 0rem auto;
   font-weight: 700;
 }
+.services h3 {
+  margin-top: 2.5rem;
+  text-align: center;
+}
 
 @media (max-width: 576px) {
   .services {
@@ -448,6 +452,18 @@ footer .socials .mdl img {
   padding: 1rem;
   margin: 0 auto;
   font-weight: 700;
+}
+.faqs .faq-link {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0rem;
+}
+.faqs .faq-link:hover {
+  color: #1759A6;
 }
 
 @media (min-width: 577px) and (max-width: 1024px) {

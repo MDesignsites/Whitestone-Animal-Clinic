@@ -85,6 +85,19 @@
         margin: 0 auto;
         font-weight: 700;
     }
+
+    .faq-link {
+        display: inline-block;
+        background-color: white;
+        color: black;
+        text-decoration: underline;
+        width: fit-content;
+        padding: 0rem;
+
+        &:hover {
+            color: #1759A6;
+        }
+    }
 }
 
 @media (min-width: 577px) and (max-width: 1024px) {
