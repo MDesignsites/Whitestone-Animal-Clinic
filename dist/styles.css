@@ -165,7 +165,7 @@ footer .socials .mdl img {
 }
 .landing .landing-content .landing-text {
   font-family: "Noto Sans", sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.25rem;
   font-weight: 900;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   text-align: left;
@@ -231,6 +231,9 @@ footer .socials .mdl img {
   text-align: justify;
   margin-inline: 5rem;
   color: white;
+}
+.about-us .about-content .about-info p {
+  font-size: 1.25rem;
 }
 .about-us .about-content .about-info .links {
   display: flex;
@@ -906,7 +909,7 @@ footer .socials .mdl img {
   transition: background-color 0.3s ease;
 }
 .service-finder .service-finder-content .search-area button:hover {
-  background-color: #114179;
+  background-color: rgb(16.7936507937, 64.9841269841, 121.2063492063);
 }
 .service-finder .service-finder-content .results-area {
   margin-top: 2rem;
