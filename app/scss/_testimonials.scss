@@ -1,6 +1,7 @@
 .testimonials {
     font-family: "Noto Sans", sans-serif;
-    margin: 4rem 0;
+    margin: 5rem 0;
+    font-weight: 500;
 
 
     h2 {
@@ -10,7 +11,20 @@
         font-weight: 900;
         font-size: 3rem;
     }
+
+    .checked {
+        color: orange;
+    }
+
+    .testimonial-content {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .testimonial-text {
+        margin-inline: 4rem;
+    }
 }
+
 
 .testimonial-container {
     width: 100%;
@@ -24,6 +38,37 @@
     transition: transform .6s ease-in-out;
 }
 
+.testimonial-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+        width: 15%;
+    }
+
+    .star {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+}
+
 .testimonial-card {
     flex: 0 0 calc(33.333% - 1rem);   /* Only 3 cards visible */
+    border: 1px solid black;
+    border-radius: 3rem;
+    margin-inline: 1rem;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-name {
+    font-weight: 800;
+    font-size: 1.75rem;
+
+    p {
+        margin: 0;
+    }
 }
