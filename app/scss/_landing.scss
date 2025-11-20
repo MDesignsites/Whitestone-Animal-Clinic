@@ -27,9 +27,9 @@
     }
 }
 
-@media (min-width: 577px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .landing-text {
-        font-size: 1.25rem !important;
+        font-size: 0.75rem !important;
         margin-left: 2rem !important;
     }
 
@@ -44,8 +44,11 @@
     }
 
     .landing-text {
-        font-size: 0.75rem !important;
         margin-left: 1rem !important;
+
+        h1 {
+            font-size: 0.75rem;
+        }
     }
 
     .landing-hero {

@@ -1,10 +1,23 @@
+// --- Variables ---
+$primary-color: #1B5DA9;
+$text-color-light: white;
+$font-sans: "Noto Sans", sans-serif;
+$font-serif: "Martel", serif;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 800px;
+
+
+// --- Global Reset ---
 body {
     margin: 0;
     padding: 0;
 }
 
+// --- Header Styling ---
 header {
-    background-color: #1B5DA9;
+    background-color: $primary-color;
     padding: 0.5rem 1rem;
 
     nav {
@@ -12,20 +25,6 @@ header {
         justify-content: space-between;
         align-items: center;
         position: relative;
-    }
-
-    .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            transition: 0.3s;
-        }
     }
 
     .logo img {
@@ -38,116 +37,130 @@ header {
         flex-direction: row;
         list-style: none;
         gap: 2rem;
+        margin: 0; // Remove default ul margin
+        padding: 0; // Remove default ul padding
 
         li a {
-            font-family: "Martel", serif;
+            font-family: $font-serif;
             text-decoration: none;
-            color: white;
+            color: $text-color-light;
             font-size: 1.25rem;
             white-space: nowrap;
         }
-    }
 
-    footer {
-    font-family: "Noto Sans", sans-serif;
-    color: white;
-
-    .address {
-        display: grid;
-        grid-template-columns: 4fr 1fr 1fr 1fr;
-        gap: 1rem;
-        background-color: #1B5DA9;
-        padding: 4rem 4rem;
-
-        .info {
-            font-weight: 200;
-        }
-
-        a {
-            display: flex;
-            text-decoration: none;
-            color: white;
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-    }
-
-    .socials {
-        margin-top: 0.25rem;
-        background-color: #1B5DA9;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 1rem;
-        gap: 1rem;
-        font-size: 1.25rem;
-        font-weight: 700;
-    }
-}
-
-    @media (max-width: 576px) {
-        nav {
-            flex-wrap: wrap;
-        }
-
-        .menu-toggle {
-            display: flex;
-        }
-
-        .logo {
-            order: 2;
-        }
-
-        .nav-links {
-            display: none;
-            flex-direction: column;
-            position: fixed; // Ensure it covers the screen
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; // Full height
-            background-color: #1B5DA9;
-            padding: 2rem 0;
-            gap: 1.5rem;
-            align-items: center;
-            justify-content: center;
-            z-index: 999; // Ensure it's above other elements
-
-            li {
-                text-align: center;
-            }
+        // Tablet adjustment (800px) - Shrink font and gap slightly before burger
+        @media (max-width: $breakpoint-tablet) {
+            gap: 1rem;
 
             li a {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
         }
 
-        .nav-links.active {
-            display: flex; // Show when toggled
+        // Tablet adjustment (1024px) - for ipad air view
+        @media (max-width: 1024px) {
+            gap: 1rem !important;
+
+            li a {
+                font-size: 1rem !important;
+            }
         }
+
     }
 }
 
+// --- Burger Menu Toggle (Hidden by default) ---
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    order: 2; // Position on the right (after logo)
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: $text-color-light;
+        transition: 0.3s;
+    }
+}
+
+// --- Media Query: Tablet/Small Desktop Burger (max-width: 800px) ---
+// This implements the requested change for the 800px breakpoint.
+@media (max-width: $breakpoint-tablet) {
+    nav {
+        // No wrap needed here if we rely on hiding/showing elements
+        // flex-wrap: wrap; // Kept for reference but not needed if links are hidden
+    }
+
+    .menu-toggle {
+        display: flex; // Show the burger menu
+    }
+
+    .nav-links {
+        display: none; // Hide the links
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+
+        li a {
+            font-size: 1.5rem;
+        }
+    }
+
+    .nav-links.active {
+        display: flex; // Show when toggled via JS
+    }
+}
+
+// --- Media Query: Mobile Specific Adjustments (max-width: 576px) ---
+// This section is kept clean for mobile-specific ordering/styling
+@media (max-width: $breakpoint-mobile) {
+    .logo {
+        order: 1; // Put logo first on mobile if needed, but the 800px logic takes over
+    }
+
+    // The 800px logic already handles the menu hiding/showing, so 
+    // we mainly need to ensure the menu-toggle is ordered correctly.
+    .menu-toggle {
+        order: 2;
+    }
+}
+
+
+// --- Footer Styling ---
 footer {
-    font-family: "Noto Sans", sans-serif;
-    color: white;
+    font-family: $font-sans;
+    color: $text-color-light;
+    background-color: $primary-color; // Move background color here
 
     .address {
         display: grid;
         grid-template-columns: 4fr 1fr 1fr 1fr;
         gap: 1rem;
-        background-color: #1B5DA9;
-        padding: 4rem 4rem;
+        padding: 4rem;
 
         .info {
             font-weight: 200;
         }
 
+        .address-info h2 {
+            font-size: 1.5rem; // Default H2 size in footer
+        }
+
         a {
             display: flex;
             text-decoration: none;
-            color: white;
+            color: $text-color-light;
             font-size: 1.25rem;
             font-weight: 400;
             margin-bottom: 1rem;
@@ -156,7 +169,6 @@ footer {
 
     .socials {
         margin-top: 0.25rem;
-        background-color: #1B5DA9;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -164,25 +176,28 @@ footer {
         gap: 1rem;
         font-size: 1.25rem;
         font-weight: 700;
+        border-top: 2px solid white;
+
+        p {
+            margin: 0; // Remove default paragraph margin
+        }
     }
-}
 
-@media (max-width: 576px) {
-    footer {
-
+    // --- Media Query: Mobile Footer (max-width: 576px) ---
+    @media (max-width: $breakpoint-mobile) {
         .address {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 1rem 1rem;
+            padding: 1rem;
 
             .address-info {
+                text-align: center;
+                font-size: 1rem;
+
                 h2 {
                     font-size: 1.25rem;
                 }
-
-                text-align: center;
-                font-size: 1rem;
             }
 
             .info {
@@ -191,34 +206,9 @@ footer {
             }
         }
 
-        .socials {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
-            /* Allow items to wrap to the next line */
-            gap: 1rem;
-            /* Add spacing between the icons */
-
-            :first-child {
-                margin-left: 0px;
-            }
-
-            :last-child {
-                margin-left: 0px !important;
-            }
-
-            a {
-                /* Styles for the social media links */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .mdl {
-                display: flex;
-                justify-content: center;
-            }
+        .socials p {
+            font-size: 1rem;
+            text-align: center;
         }
     }
 }

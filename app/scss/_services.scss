@@ -9,6 +9,7 @@
         font-weight: 900;
         font-size: 3rem;
     }
+
     .services-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -30,6 +31,7 @@
                 h2 {
                     text-align: center;
                 }
+
                 ul {
                     display: flex;
                     flex-direction: column;
@@ -39,6 +41,7 @@
             }
         }
     }
+
     a {
         display: flex;
         justify-content: center;
@@ -50,6 +53,7 @@
         margin: 3rem auto 0rem auto;
         font-weight: 700;
     }
+
     h3 {
         margin-top: 2.5rem;
         text-align: center;
@@ -59,8 +63,9 @@
 @media (max-width: 576px) {
     .services {
         margin: 0rem 5rem !important;
+
         h1 {
-            font-size:  3rem !important;
+            font-size: 3rem !important;
         }
 
         .services-content {
@@ -87,9 +92,17 @@
 @media (max-width: 320px) {
     .services {
         margin: 0rem 1.5rem !important;
+
         h1 {
             font-size: 2rem !important;
         }
+
+        .services-text {
+            h2 {
+                font-size: 1.25rem !important;
+            }
+        }
+
 
         .services-content {
             display: flex;
@@ -102,5 +115,5 @@
             }
         }
     }
-    
+
 }

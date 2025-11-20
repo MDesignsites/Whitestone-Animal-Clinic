@@ -112,6 +112,12 @@
 }
 
 @media (max-width: 320px) {
+    .contact {
+        h1 {
+            font-size: 2rem !important;
+        }
+    }
+
     .contact-content {
         .content-details {
             .content-card {
