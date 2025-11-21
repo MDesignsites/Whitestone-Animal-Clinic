@@ -6,7 +6,8 @@ $font-serif: "Martel", serif;
 
 // Breakpoints
 $breakpoint-mobile: 576px;
-$breakpoint-tablet: 800px;
+// Set burger menu activation to 1024px to prevent nav text wrapping on tablets
+$breakpoint-tablet-burger: 1024px; 
 
 
 // --- Global Reset ---
@@ -33,12 +34,12 @@ header {
     }
 
     .nav-links {
-        display: flex;
+        display: flex; // Default desktop display
         flex-direction: row;
         list-style: none;
         gap: 2rem;
-        margin: 0; // Remove default ul margin
-        padding: 0; // Remove default ul padding
+        margin: 0;
+        padding: 0;
 
         li a {
             font-family: $font-serif;
@@ -48,91 +49,94 @@ header {
             white-space: nowrap;
         }
 
-        // Tablet adjustment (800px) - Shrink font and gap slightly before burger
-        @media (max-width: $breakpoint-tablet) {
+        // Tablet adjustment (1024px to 1200px range) - Shrink text slightly
+        @media (max-width: $breakpoint-tablet-burger) {
             gap: 1rem;
-
+            
             li a {
                 font-size: 1rem;
             }
         }
+    }
 
-        // Tablet adjustment (1024px) - for ipad air view
-        @media (max-width: 1024px) {
-            gap: 1rem !important;
+    // --- Burger Menu Toggle (Hidden by default) ---
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        order: 2; // Position on the right
+        transition: transform 0.3s;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: $text-color-light;
+            transition: 0.3s;
+        }
+    }
+
+    // --- Close Button (Hidden by default) ---
+    .close-button {
+        display: none;
+        
+        // Styles for the 'X' button when the menu is active
+        @media (max-width: $breakpoint-tablet-burger) {
+            position: absolute;
+            top: 2rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: $text-color-light;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    }
+
+    // --- Media Query: Burger Menu Activation (max-width: 1024px) ---
+    @media (max-width: $breakpoint-tablet-burger) {
+
+        .menu-toggle {
+            display: flex; // Show the burger menu
+        }
+        
+        // Show the close button when the menu is active
+        .nav-links.active ~ .close-button {
+            display: block;
+        }
+
+        .nav-links {
+            display: none; // Hide the inline links
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $primary-color;
+            padding: 2rem 0;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
 
             li a {
-                font-size: 1rem !important;
+                font-size: 1.5rem;
             }
         }
 
-    }
-}
-
-// --- Burger Menu Toggle (Hidden by default) ---
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    order: 2; // Position on the right (after logo)
-
-    .bar {
-        width: 25px;
-        height: 3px;
-        background-color: $text-color-light;
-        transition: 0.3s;
-    }
-}
-
-// --- Media Query: Tablet/Small Desktop Burger (max-width: 800px) ---
-// This implements the requested change for the 800px breakpoint.
-@media (max-width: $breakpoint-tablet) {
-    nav {
-        // No wrap needed here if we rely on hiding/showing elements
-        // flex-wrap: wrap; // Kept for reference but not needed if links are hidden
-    }
-
-    .menu-toggle {
-        display: flex; // Show the burger menu
-    }
-
-    .nav-links {
-        display: none; // Hide the links
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $primary-color;
-        padding: 2rem 0;
-        gap: 1.5rem;
-        align-items: center;
-        justify-content: center;
-        z-index: 999;
-
-        li a {
-            font-size: 1.5rem;
+        .nav-links.active {
+            display: flex; // Show when toggled via JS
         }
     }
-
-    .nav-links.active {
-        display: flex; // Show when toggled via JS
-    }
-}
-
-// --- Media Query: Mobile Specific Adjustments (max-width: 576px) ---
-// This section is kept clean for mobile-specific ordering/styling
-@media (max-width: $breakpoint-mobile) {
-    .logo {
-        order: 1; // Put logo first on mobile if needed, but the 800px logic takes over
-    }
-
-    // The 800px logic already handles the menu hiding/showing, so 
-    // we mainly need to ensure the menu-toggle is ordered correctly.
-    .menu-toggle {
-        order: 2;
+    
+    // --- Media Query: Mobile Specific Adjustments (max-width: 576px) ---
+    @media (max-width: $breakpoint-mobile) {
+        .logo {
+            order: 1;
+        }
+        .menu-toggle {
+            order: 2;
+        }
     }
 }
 
@@ -141,7 +145,7 @@ header {
 footer {
     font-family: $font-sans;
     color: $text-color-light;
-    background-color: $primary-color; // Move background color here
+    background-color: $primary-color;
 
     .address {
         display: grid;
@@ -154,7 +158,7 @@ footer {
         }
 
         .address-info h2 {
-            font-size: 1.5rem; // Default H2 size in footer
+            font-size: 1.5rem;
         }
 
         a {
@@ -176,10 +180,9 @@ footer {
         gap: 1rem;
         font-size: 1.25rem;
         font-weight: 700;
-        border-top: 2px solid white;
 
         p {
-            margin: 0; // Remove default paragraph margin
+            margin: 0;
         }
     }
 
