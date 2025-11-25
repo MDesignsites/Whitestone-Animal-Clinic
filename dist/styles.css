@@ -304,8 +304,8 @@ footer .socials p {
     text-align: center;
   }
   .about-us .about-content .about-hero iframe {
-    width: 280px;
-    height: 180px;
+    width: 280px !important;
+    height: 180px !important;
   }
 }
 .services {
@@ -712,45 +712,49 @@ footer .socials p {
 }
 .facility {
   font-family: "Noto Sans", sans-serif;
-  margin: 4rem 5rem;
+  margin: 4rem 0;
 }
 .facility .facility-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  background-color: #6894c5;
 }
 .facility .facility-container .facility-row1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+.facility .facility-container .facility-row1 :first-child {
+  width: 70%;
+}
 .facility .facility-container .facility-row1 img {
-  width: 50%;
+  width: 30%;
 }
 .facility .facility-container .facility-row2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 2rem;
+}
+.facility .facility-container .facility-row2 :nth-child(2) {
+  width: 70%;
 }
 .facility .facility-container .facility-row2 img {
-  width: 15%;
+  width: 30%;
 }
 .facility .facility-container .facility-row3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1.5rem;
+}
+.facility .facility-container .facility-row3 :nth-child(3) {
+  width: 70%;
 }
 .facility .facility-container .facility-row3 img {
-  width: 40%;
-}
-.facility .facility-container img {
-  width: 50%;
+  width: 30%;
 }
 .facility h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0rem 0rem 2rem 0rem;
   color: #1759A6;
   font-size: 3rem;
   font-weight: 900;
@@ -766,7 +770,22 @@ footer .socials p {
 }
 @media screen and (max-width: 576px) {
   .facility {
-    margin-inline: 0.5rem;
+    margin: 0;
+  }
+  .facility-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .facility-container .facility-row1,
+  .facility-container .facility-row2,
+  .facility-container .facility-row3 {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .facility-container .facility-row1 img,
+  .facility-container .facility-row2 img,
+  .facility-container .facility-row3 img {
+    width: 100% !important;
   }
 }
 .testimonials {
