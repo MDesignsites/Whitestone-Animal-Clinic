@@ -1,94 +1,79 @@
+$card-gap: 24px;
+$primary-color: #1759A6;
+$background-color: #6894c5;
+
 .facility {
     font-family: "Noto Sans", sans-serif;
     margin: 4rem 0;
 
-    .facility-container {
-        display: flex;
-        flex-direction: column;
-        background-color: #6894c5;
-
-        .facility-row1 {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            :first-child {
-                width: 70%;
-            }
-
-            img {
-                width: 30%;
-            }
-
-        }
-
-        .facility-row2 {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            :nth-child(2) {
-                width: 70%;
-            }
-
-            img {
-                width: 30%;
-            }
-
-        }
-
-        .facility-row3 {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            :nth-child(3) {
-                width: 70%;
-            }
-
-            img {
-                width: 30%;
-            }
-        }
-    }
-
     h2 {
         text-align: center;
         margin: 0rem 0rem 2rem 0rem;
-        color: #1759A6;
+        color: $primary-color;
         font-size: 3rem;
         font-weight: 900;
     }
-}
 
-@media screen and (max-width: 768px) {
-    .facility {
-        margin-inline: 1rem;
-
-        h2 {
-            font-size: 2rem;
-        }
+    .carousel-frame.facility-frame {
+        overflow: hidden; // Crucial: Hides cards outside the current view
+        background-color: $background-color;
+        padding: $card-gap; // Adds padding around the whole track area
     }
 
+    // The track that slides
+    .facility-track {
+        display: flex;
+        width: fit-content; // Ensures the track is as wide as all content combined
+        transform: translateX(0); // Initial position
+        transition: transform 0.6s ease-in-out; // Transition for movement
+    }
+
+    // Individual card/slide
+    .facility-card {
+        flex-shrink: 0;
+        margin-right: $card-gap; // Keep the gap consistent on the right
+
+        // Default (Large Screens): 3 visible cards
+        width: calc((100% / 3) - (($card-gap * 2) / 3));
+
+        // Styles for the image inside the card
+        img {
+            display: block;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
 }
 
+// Tablet/Medium screens (Matching JS: return 2 for <= 992px)
+@media screen and (max-width: 992px) {
+    .facility {
+        .facility-card {
+            // 2 visible cards
+            // Calculation: (100% / 2) - (($card-gap * 1) / 2)
+            width: calc((100% / 2) - ($card-gap / 2));
+        }
+    }
+}
+
+// Mobile/Small screens (Matching JS: return 1 for <= 576px)
 @media screen and (max-width: 576px) {
     .facility {
         margin: 0;
-    }
 
-    .facility-container {
-        display: flex;
-        flex-direction: column;
+        h2 {
+            font-size: 2rem;
+            margin: 1rem 0 1.5rem 0;
+        }
 
-        .facility-row1,
-        .facility-row2,
-        .facility-row3 {
-            display: flex;
-            flex-direction: column !important;
-            img {
-                width: 100% !important;
-            }
+        .carousel-frame.facility-frame {
+            padding: $card-gap; 
+        }
+
+        .facility-card {
+            width: 100%; 
         }
     }
 }

@@ -714,44 +714,6 @@ footer .socials p {
   font-family: "Noto Sans", sans-serif;
   margin: 4rem 0;
 }
-.facility .facility-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #6894c5;
-}
-.facility .facility-container .facility-row1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.facility .facility-container .facility-row1 :first-child {
-  width: 70%;
-}
-.facility .facility-container .facility-row1 img {
-  width: 30%;
-}
-.facility .facility-container .facility-row2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.facility .facility-container .facility-row2 :nth-child(2) {
-  width: 70%;
-}
-.facility .facility-container .facility-row2 img {
-  width: 30%;
-}
-.facility .facility-container .facility-row3 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.facility .facility-container .facility-row3 :nth-child(3) {
-  width: 70%;
-}
-.facility .facility-container .facility-row3 img {
-  width: 30%;
-}
 .facility h2 {
   text-align: center;
   margin: 0rem 0rem 2rem 0rem;
@@ -759,33 +721,50 @@ footer .socials p {
   font-size: 3rem;
   font-weight: 900;
 }
+.facility .carousel-frame.facility-frame {
+  overflow: hidden;
+  background-color: #6894c5;
+  padding: 24px;
+}
+.facility .facility-track {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.facility .facility-card {
+  flex-shrink: 0;
+  margin-right: 24px;
+  width: calc(33.3333333333% - 16px);
+}
+.facility .facility-card img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
 
-@media screen and (max-width: 768px) {
-  .facility {
-    margin-inline: 1rem;
-  }
-  .facility h2 {
-    font-size: 2rem;
+@media screen and (max-width: 992px) {
+  .facility .facility-card {
+    width: calc(50% - 12px);
   }
 }
 @media screen and (max-width: 576px) {
   .facility {
     margin: 0;
   }
-  .facility-container {
-    display: flex;
-    flex-direction: column;
+  .facility h2 {
+    font-size: 2rem;
+    margin: 1rem 0 1.5rem 0;
   }
-  .facility-container .facility-row1,
-  .facility-container .facility-row2,
-  .facility-container .facility-row3 {
-    display: flex;
-    flex-direction: column !important;
+  .facility .carousel-frame.facility-frame {
+    padding: 24px;
   }
-  .facility-container .facility-row1 img,
-  .facility-container .facility-row2 img,
-  .facility-container .facility-row3 img {
-    width: 100% !important;
+  .facility .facility-card {
+    width: 100%;
   }
 }
 .testimonials {
