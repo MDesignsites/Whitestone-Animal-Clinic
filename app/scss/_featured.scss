@@ -1,119 +1,222 @@
+$blue-background: #2961a1;
+$blue-primary: #1759A6;
+$control-width: 60px; // Width for the central control column
+$animation-duration: 0.35s; // Matches SLIDE_DURATION in JS
+
 .featured {
     font-family: "Noto Sans", sans-serif;
-    margin: 4rem 5rem;
+    padding: 4rem 5rem;
+    background-color: $blue-background;
+    margin-bottom: 2rem;
 
     h2 {
         text-align: center;
         margin-bottom: 1.5rem;
-        color: #1759A6;
+        color: white;
         font-weight: 900;
         font-size: 3rem;
     }
 
-    .featured-card {
-        margin-inline: 10rem;
-        padding: 2rem;
-        margin-bottom: 2rem;
+    .video-carousel-wrapper {
+        display: grid;
+        // Desktop Grid: Video (1.5fr) | Controls (60px) | Description (1fr)
+        grid-template-columns: 1.5fr $control-width 1fr;
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    // --- 1. Main Video Display (Left Column) ---
+    .video-player-display {
+        grid-column: 1 / 2;
+        background-color: $blue-background;
         border-radius: 1rem;
-        background-color: #2961a1;
+        padding: 1.5rem; // Desktop padding
 
-        .collapse {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 2rem;
-            cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-            h3 {
-                color: white;
-                text-align: center;
-            }
-        }
-
-        .featured-content {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .active-video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* Taller ratio for external embeds */
+            margin-bottom: 0;
+            border-radius: 8px;
+            overflow: hidden;
 
             iframe {
-                margin-bottom: 1rem;
-            }
-
-            p {
-                margin-inline: 10rem;
-                font-weight: 600;
-                text-align: justify;
-                color: white;
-            }
-        }
-
-        // Show content when card is active
-        &.active {
-            .featured-content {
-                display: flex;
-            }
-        }
-    }
-}
-
-@media (max-width: 1180px) {
-    .featured-card {
-        margin-inline: 2rem !important;
-        padding: 1rem;
-        margin-bottom: 1rem;
-
-        .collapse {
-            gap: 1rem;
-            img {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-        }
-
-        .featured-content {
-            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: 400px;
+                height: 100%;
+                border: none;
+                min-width: 100%;
+                min-height: 100%;
             }
+        }
+    }
 
-            p {
-                margin-inline: 2rem !important; 
+    // --- 2. Central Controls (Middle Column) ---
+    .mobile-controls-and-caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-column: 2 / 3;
+    }
+
+    .slider-controls {
+        display: flex;
+        flex-direction: column; /* DESKTOP: Vertical stack */
+        gap: 20px;
+        align-items: center;
+
+        // DESKTOP ICONS (UP/DOWN)
+        #prevBtn::before { content: '▲'; }
+        #nextBtn::before { content: '▼'; }
+
+        button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative; 
+            
+            &:hover { background-color: $blue-primary; color: white; }
+
+            &::before {
+                font-size: 1.2rem; 
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
             }
+        }
+
+        #slideCounter {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+
+    // --- 3. Description Column (Right Column) ---
+    .video-nav-list {
+        grid-column: 3 / 4;
+        max-height: 500px;
+        overflow-y: hidden; /* HIDDEN to clip sliding text */
+        padding: 1rem;
+        background-color: $blue-background;
+        border-radius: 1rem;
+        position: relative; /* Needed for transform origin */
+
+        // Base styles for content elements to ensure they transition
+        h3, p.video-caption-display {
+            transition: transform $animation-duration ease-out, opacity $animation-duration ease-out;
+            position: relative; 
+            
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p.video-caption-display {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: justify; // Desktop default: justify
+        }
+
+        .featured-card, .video-nav-track { display: none; }
+    }
+    
+    // --- ANIMATION CLASSES (DESKTOP: Vertical Slide) ---
+    // Exit classes (instant move off-screen)
+    .slide-up-exit, .slide-down-enter { transform: translateY(-100%); opacity: 0; }
+    .slide-down-exit, .slide-up-enter { transform: translateY(100%); opacity: 0; }
+}
+
+// --- TABLET LAYOUT ADJUSTMENTS (<= 992px) ---
+@media (max-width: 992px) {
+    .featured {
+        padding: 2rem 0.5rem; 
+        margin: 2rem 0;
+
+        .video-carousel-wrapper { grid-template-columns: 1fr; gap: 1.5rem; }
+
+        .video-player-display {
+            grid-column: 1 / -1;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-controls-and-caption { 
+            grid-column: 1 / -1; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            order: 2; 
+        }
+
+        .slider-controls {
+            flex-direction: row; 
+            gap: 10px;
+            #prevBtn::before { content: '◀'; }
+            #nextBtn::before { content: '▶'; }
+        }
+
+        .video-nav-list { 
+            grid-column: 1 / -1; 
+            max-height: none; 
+            overflow-y: visible; 
+            padding: 1rem; 
+            order: 3; 
+            
+            // ANIMATION CLASSES (MOBILE: Horizontal Slide)
+            .slide-up-exit, .slide-down-exit, .slide-up-enter, .slide-down-enter { transform: none; } // Reset vertical
+
+            .slide-left-exit, .slide-right-enter { transform: translateX(-100%); opacity: 0; }
+            .slide-right-exit, .slide-left-enter { transform: translateX(100%); opacity: 0; }
+            
+            h3 { text-align: center; }
+            p.video-caption-display { text-align: center; } 
+
+            h3, p.video-caption-display { display: block !important; }
         }
     }
 }
 
+// --- Mobile Layout Adjustments (<= 576px) ---
 @media (max-width: 576px) {
     .featured {
-        margin: 2rem 1rem;
+        padding: 1rem 0.25rem; 
+        margin-bottom: 0.5rem;
+        
+        h2 { font-size: 2.2rem; }
+        
+        .video-carousel-wrapper { gap: 0.75rem; }
 
-        h2 {
-            font-size: 2rem !important;
+        .video-player-display {
+            padding: 0.25rem 0; 
         }
-
-        .featured-card {
-            margin-inline: 0rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-
-            .collapse {
-                gap: 1rem;
-                img {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                }
-            }
-
-            .featured-content {
-                iframe {
-                    width: 75%;
-                    height: 75%;
-                }
-
-                p {
-                    margin-inline: 2rem;
-                }
+        
+        .mobile-controls-and-caption {
+            padding: 0.5rem 0;
+        }
+        
+        .video-nav-list {
+            padding: 0.75rem; 
+            
+            h3 { font-size: 1.2rem; text-align: center; }
+            p.video-caption-display { 
+                font-size: 0.8rem; 
+                text-align: center; 
             }
         }
     }
