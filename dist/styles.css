@@ -161,6 +161,10 @@ footer .socials p {
   }
   footer .address .info {
     text-align: center;
+  }
+  footer .address .info a {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
   }
   footer .socials p {
